@@ -202,12 +202,23 @@ const Navbar = () => {
                             onClose={handleCloseUserMenu}
                         >
 
-
+                          
                             <MenuItem onClick={handleCloseUserMenu}>
-                                <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/admin/dashboard">Admin Dashboard</Link></Typography>
+                                <Typography textAlign="center">
+                                    
+                                    <Link style={{ textDecoration: "none", color: palette.secondary.main }}
+                                     to="/admin/dashboard">
+                                        Admin Dashboard
+                                        </Link>
+                                    </Typography>
                             </MenuItem>
                             <MenuItem onClick={handleCloseUserMenu}>
-                                <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/user/dashboard">User Dashboard</Link></Typography>
+                                <Typography textAlign="center">
+                                    <Link style={{ textDecoration: "none", color: palette.secondary.main }} 
+                                    to="/user/dashboard">
+                                        User Dashboard
+                                        </Link>
+                                        </Typography>
                             </MenuItem>
 
                             {
