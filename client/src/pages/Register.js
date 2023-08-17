@@ -27,6 +27,9 @@ const validationSchema = yup.object({
         .string('Enter your password')
         .min(8, 'Password should be of minimum 8 characters length')
         .required('Password is required'),
+    role:yup
+        .string('Enter your role 1 for admin 0 for user')
+        .required('role is required')
 });
 
 
@@ -40,7 +43,8 @@ const Register = () => {
             firstName: '',
             lastName: '',
             email: '',
-            password: ''
+            password: '',
+            role:0,
         },
         validationSchema: validationSchema,
         onSubmit: (values, actions) => {
@@ -153,6 +157,29 @@ const Register = () => {
                             onBlur={formik.handleBlur}
                             error={formik.touched.password && Boolean(formik.errors.password)}
                             helperText={formik.touched.password && formik.errors.password}
+                        />
+                        <TextField
+                            sx={{
+                                mb: 3,
+                                "& .MuiInputBase-root": {
+                                    color: 'text.secondary',
+                                },
+                                fieldset: { borderColor: "rgb(231, 235, 240)" }
+                            }}
+                            fullWidth
+                            id="role"
+                            label="role"
+                            name='role'
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+
+                            placeholder="role"
+                            value={formik.values.role}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.role && Boolean(formik.errors.role)}
+                            helperText={formik.touched.role && formik.errors.role}
                         />
 
                         <Button fullWidth variant="contained" type='submit' >Register</Button>

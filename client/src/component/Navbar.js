@@ -151,9 +151,13 @@ const Navbar = () => {
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}>
+                                {
+                                    !userInfo?
                             <Link to="/register" style={{ color: 'white', textDecoration: "none" }}>
                                 Register
-                            </Link>
+                            </Link>:
+                             null
+                              }
                         </Button>
 
 

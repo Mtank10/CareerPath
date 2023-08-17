@@ -26,7 +26,7 @@ const SingleJob = () => {
             title: singleJob && singleJob.title,
             description: singleJob && singleJob.description,
             salary: singleJob && singleJob.salary,
-            location: singleJob && singleJob.location
+            location: singleJob && singleJob.location,
         }))
     }
 
